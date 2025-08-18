@@ -4,6 +4,10 @@ Created on Sun Aug 17 22:38:37 2025
 
 @author: lalit
 """
+import streamlit as st
+
+st.title("🚀 Logistic Regression App")
+st.write("Welcome! If you see this, the app is working.")
 
 #  Import libraries
 import pandas as pd
@@ -87,5 +91,6 @@ plt.show()
 #  Predict on test data
 test_predictions = model.predict(test_df)
 print("Test Predictions (first 10):", test_predictions[:10])
+
 
 
