@@ -20,6 +20,15 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 from sklearn.preprocessing import LabelEncoder
+st.title("🚀 Logistic Regression App")
+st.write("Upload your dataset and see model results!")
+
+# File uploader
+uploaded_file = st.file_uploader("Upload CSV", type="csv")
+if uploaded_file:
+    df = pd.read_csv(uploaded_file)
+    st.subheader("Dataset Preview")
+    st.write(df.head())
 
 # Load datasets
 train_df = pd.read_csv("Titanic_train.csv")
@@ -91,6 +100,7 @@ plt.show()
 #  Predict on test data
 test_predictions = model.predict(test_df)
 print("Test Predictions (first 10):", test_predictions[:10])
+
 
 
 
