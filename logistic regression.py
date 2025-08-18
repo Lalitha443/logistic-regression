@@ -8,6 +8,8 @@ Created on Sun Aug 17 22:38:37 2025
 #  Import libraries
 import pandas as pd
 import numpy as np
+import matplotlib
+matplotlib.use("Agg")  # headless backend for Streamlit Cloud
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
@@ -85,3 +87,4 @@ plt.show()
 #  Predict on test data
 test_predictions = model.predict(test_df)
 print("Test Predictions (first 10):", test_predictions[:10])
+
