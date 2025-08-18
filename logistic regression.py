@@ -95,6 +95,12 @@ print("Classification Report:\n", classification_report(y_val, y_pred))
 acc = accuracy_score(y_val, y_pred)
 st.subheader("Model Accuracy")
 st.write(f"{acc:.2%}")
+
+from sklearn.model_selection import cross_val_score
+
+scores = cross_val_score(model, X, y, cv=5)
+print("Mean accuracy:", scores.mean())
+
 #  Confusion Matrix Heatmap
 plt.figure(figsize=(5,4))
 sns.heatmap(confusion_matrix(y_val, y_pred), annot=True, fmt='d', cmap='Blues')
@@ -105,6 +111,7 @@ plt.show()
 test_predictions = model.predict(test_df)
 print("Test Predictions (first 10):", test_predictions[:10])
  
+
 
 
 
