@@ -1,0 +1,5 @@
+pandas==14.40.33810.0
+numpy
+matplotlib
+seaborn
+sklearn
