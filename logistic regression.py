@@ -18,8 +18,8 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 from sklearn.preprocessing import LabelEncoder
 
 # Load datasets
-train_df = pd.read_csv("C://Users//lalit//OneDrive//Documents//Titanic_train.csv")
-test_df = pd.read_csv("C://Users//lalit//OneDrive//Documents//Titanic_test.csv")
+train_df = pd.read_csv("Titanic_train.csv")
+test_df = pd.read_csv("Titanic_test.csv")
 
 
 #  Preview data
@@ -87,4 +87,5 @@ plt.show()
 #  Predict on test data
 test_predictions = model.predict(test_df)
 print("Test Predictions (first 10):", test_predictions[:10])
+
 
