@@ -1,4 +1,4 @@
-pandas==14.40.33810.0
+pandas
 numpy
 matplotlib
 seaborn
