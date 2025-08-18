@@ -90,7 +90,9 @@ y_pred = model.predict(X_val)
 print("Accuracy:", accuracy_score(y_val, y_pred))
 print("Confusion Matrix:\n", confusion_matrix(y_val, y_pred))
 print("Classification Report:\n", classification_report(y_val, y_pred))
-
+c = accuracy_score(y_test, preds)
+        st.subheader("Model Accuracy")
+        st.write(f"{acc:.2%}")
 #  Confusion Matrix Heatmap
 plt.figure(figsize=(5,4))
 sns.heatmap(confusion_matrix(y_val, y_pred), annot=True, fmt='d', cmap='Blues')
@@ -100,8 +102,8 @@ plt.show()
 #  Predict on test data
 test_predictions = model.predict(test_df)
 print("Test Predictions (first 10):", test_predictions[:10])
- st.subheader("Model Accuracy")
-        st.write(f"{acc:.2%}")
+ 
+
 
 
 
