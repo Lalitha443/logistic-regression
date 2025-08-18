@@ -85,6 +85,8 @@ model.fit(X_train, y_train)
 
 # Predictions
 y_pred = model.predict(X_val)
+preds = model.predict(X_test)
+
 
 #Evaluation
 print("Accuracy:", accuracy_score(y_val, y_pred))
@@ -103,6 +105,7 @@ plt.show()
 test_predictions = model.predict(test_df)
 print("Test Predictions (first 10):", test_predictions[:10])
  
+
 
 
 
