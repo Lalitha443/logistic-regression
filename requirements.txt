@@ -3,3 +3,9 @@ numpy
 matplotlib
 seaborn
 sklearn
+train_test_split
+LogisticRegression
+accuracy_score
+confusion_matrix
+classification_report
+LabelEncoder
