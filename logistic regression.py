@@ -100,6 +100,10 @@ plt.show()
 #  Predict on test data
 test_predictions = model.predict(test_df)
 print("Test Predictions (first 10):", test_predictions[:10])
+ st.subheader("Model Accuracy")
+        st.write(f"{acc:.2%}")
+
+
 
 
 
