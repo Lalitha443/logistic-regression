@@ -1,0 +1,39 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Aug 21 23:39:21 2025
+
+@author: lalit
+"""
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+
+# Load and prepare your data (same as your original script)
+train_df = pd.read_csv("C:\\Users\\lalit\\OneDrive\\Documents\\titanic_train.csv")
+train_df.fillna(method='ffill', inplace=True)
+
+# DATA TRANSFORMATION for train data
+from sklearn.preprocessing import LabelEncoder
+LE = LabelEncoder()
+
+train_df["Name"] = LE.fit_transform(train_df["Name"])
+train_df["Sex"] = LE.fit_transform(train_df["Sex"])
+train_df["Ticket"] = LE.fit_transform(train_df["Ticket"])
+train_df["Cabin"] = LE.fit_transform(train_df["Cabin"])
+train_df["Embarked"] = LE.fit_transform(train_df["Embarked"])
+train_df.tail()
+
+# Assuming you've already preprocessed your data into X_train and Y_train
+X_train = train_df[['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare', 'Embarked']]
+Y_train = train_df['Survived']
+
+# Train the model
+model = LogisticRegression()
+model.fit(X_train, Y_train)
+
+# Save the trained model to a file
+import pickle
+with open("logistic_regression_model.pkl", "wb") as f:
+    pickle.dump(model, f)
+
